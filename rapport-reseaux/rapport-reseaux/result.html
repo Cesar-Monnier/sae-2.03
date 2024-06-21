@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="stylesheet" href="css/css_sae203.css">
+  <title>Rapport SAÉ Installation réseaux</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Rapport SAÉ Installation réseaux</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#installation-technique"
+id="toc-installation-technique"><span
+class="toc-section-number">1</span> <span
+style="color: pink;"><strong>Installation Technique</strong></span></a>
+<ul>
+<li><a href="#création-de-la-machine"
+id="toc-création-de-la-machine"><span
+class="toc-section-number">1.1</span> <span
+style="color: orange;"><strong>Création de la
+machine</strong></span></a></li>
+<li><a href="#configuration-de-la-situation-géographique"
+id="toc-configuration-de-la-situation-géographique"><span
+class="toc-section-number">1.2</span> <span
+style="color: orange;"><strong>Configuration de la situation
+géographique</strong></span></a></li>
+<li><a href="#configuration-du-réseau"
+id="toc-configuration-du-réseau"><span
+class="toc-section-number">1.3</span> <span
+style="color: orange;"><strong>Configuration du
+réseau</strong></span></a></li>
+<li><a href="#création-et-configuration-des-comptes"
+id="toc-création-et-configuration-des-comptes"><span
+class="toc-section-number">1.4</span> <span
+style="color: orange;"><strong>Création et configuration des
+comptes</strong></span></a></li>
+<li><a href="#partitionnement-de-lespace-de-stockage"
+id="toc-partitionnement-de-lespace-de-stockage"><span
+class="toc-section-number">1.5</span> <span
+style="color: orange;"><strong>Partitionnement de l’espace de
+stockage</strong></span></a></li>
+<li><a href="#configuration-de-loutil-de-gestion-des-paquets"
+id="toc-configuration-de-loutil-de-gestion-des-paquets"><span
+class="toc-section-number">1.6</span> <span
+style="color: orange;"><strong>Configuration de l’outil de gestion des
+paquets</strong></span></a></li>
+<li><a href="#selection-des-logiciels"
+id="toc-selection-des-logiciels"><span
+class="toc-section-number">1.7</span> <span
+style="color: orange;"><strong>Selection des
+logiciels</strong></span></a></li>
+<li><a href="#commande-à-faire-depuis-la-machine"
+id="toc-commande-à-faire-depuis-la-machine"><span
+class="toc-section-number">1.8</span> <span
+style="color: orange;"><strong>Commande à faire depuis la
+machine</strong></span></a></li>
+<li><a href="#installation-de-gitea"
+id="toc-installation-de-gitea"><span
+class="toc-section-number">1.9</span> <span
+style="color: orange;"><strong>Installation de Gitea</strong></span></a>
+<ul>
+<li><a href="#quelque-informations-sur-gitea"
+id="toc-quelque-informations-sur-gitea"><span
+class="toc-section-number">1.9.1</span> <span style="color: green;">
+<strong>Quelque informations sur GITEA</strong></span></a></li>
+<li><a href="#comment-linstaller" id="toc-comment-linstaller"><span
+class="toc-section-number">1.9.2</span> <span style="color: green;">
+<strong>Comment l’installer ?</strong></span></a></li>
+<li><a href="#partie-avec-affiche-visuel"
+id="toc-partie-avec-affiche-visuel"><span
+class="toc-section-number">1.9.3</span> <span style="color: green;">
+<strong>Partie avec affiche visuel</strong></span></a></li>
+</ul></li>
+</ul></li>
+<li><a href="#les-questions-de-vocabulaire-et-de-culture-informatique"
+id="toc-les-questions-de-vocabulaire-et-de-culture-informatique"><span
+class="toc-section-number">2</span> <span
+style="color: pink;"><strong>Les questions de vocabulaire et de culture
+informatique</strong></span></a>
+<ul>
+<li><a href="#les-questions-de-vocabulaire"
+id="toc-les-questions-de-vocabulaire"><span
+class="toc-section-number">2.1</span> <span
+style="color: orange;"><strong>Les questions de
+vocabulaire</strong></span></a></li>
+<li><a href="#les-questions-sur-debian"
+id="toc-les-questions-sur-debian"><span
+class="toc-section-number">2.2</span> <span
+style="color: orange;"><strong>Les questions sur
+Debian</strong></span></a></li>
+<li><a href="#question-sur-git" id="toc-question-sur-git"><span
+class="toc-section-number">2.3</span> <span
+style="color: orange;"><strong>Question sur
+<em>GIT</em></strong></span></a></li>
+<li><a href="#les-questions-sur-gitea"
+id="toc-les-questions-sur-gitea"><span
+class="toc-section-number">2.4</span> <span
+style="color: orange;"><strong>Les questions sur GITEA
+</strong></span></a></li>
+</ul></li>
+<li><a href="#les-difficultés-rencontrés"
+id="toc-les-difficultés-rencontrés"><span
+class="toc-section-number">3</span> <span
+style="color: pink;"><strong>Les difficultés
+rencontrés</strong></span></a></li>
+</ul>
+</nav>
+<h1 data-number="1" id="installation-technique"><span
+class="header-section-number">1</span> <span
+style="color: pink;"><strong>Installation Technique</strong></span></h1>
+<h2 data-number="1.1" id="création-de-la-machine"><span
+class="header-section-number">1.1</span> <span
+style="color: orange;"><strong>Création de la
+machine</strong></span></h2>
+<ul>
+<li>Tout d’abord rendez-vous sur virtualbox, cliquez sur Outils.</li>
+</ul>
+<p><img src="./image/virtual_box%20à_l&#39;origine.jpg" /></p>
+<ul>
+<li>Puis sur nouvelle,complétez-le avec les informations suivantes et
+remplacer par votre login : “prenom.nom.etu”</li>
+</ul>
+<p><img src="./image/configuration_outils.png" /></p>
+<ul>
+<li>Une fois cela fait allez dans le dossier de votre machine virtuelle,
+et dézipper votre dossier autoinstall_debian.zip comme ci-dessous :</li>
+</ul>
+<p><img src="./image/autoinstall_debian.png" /></p>
+<ul>
+<li><p>Ensuite,placez-vous dans le dossier autoinstall_Debian depuis
+votre terminal et tapez la commande suivante : “sed -i
+-E”s/(–iprt-iso-maker-file-marker-bourne-sh).*$/\1=$(cat
+/proc/sys/kernel/random/uuid)/” S203-Debian12.viso”</p></li>
+<li><p>Une fois cela fait,placez l’iso Debian 12 dans la machine
+virtuelle(l’iso est présent dans le dossier autoinstall_Debian) comme
+i-dessous en appuyant sur “choose disk file”:</p></li>
+</ul>
+<p><img src="./image/stockage_vm.png" /></p>
+<ul>
+<li>Puis sur “ok” en bas à droite.</li>
+</ul>
+<p><img src="./image/fichier_autoinstall.png" /></p>
+<ul>
+<li>Modifiez le fichier preseed-fr.cfg présent dans le
+autoinstall_Debian.zip afin d’installer Mate,une version graphique de
+Debian 12. Pour ce faire, ajoutez “mate-desktop” à la suite de la 83 ème
+ligne du fichier,comme le montre l’image ci-dessus. Une fois cela
+fait,lancez votre machine virtuelle,si une erreur apparaît cela indique
+qu’une étape est ratée ou mal exécutée. Le login et mot de passe sont
+“root” et en mot de passe “root”.</li>
+</ul>
+<h2 data-number="1.2"
+id="configuration-de-la-situation-géographique"><span
+class="header-section-number">1.2</span> <span
+style="color: orange;"><strong>Configuration de la situation
+géographique</strong></span></h2>
+<ul>
+<li>Dans un premier temps nous avons configurer la machine afin de la
+mettre en français.</li>
+</ul>
+<p><img src="./image/sélection_langue.png" /></p>
+<ul>
+<li>Dans un second nous configurons le fuseau horaire c’est dire le
+français.</li>
+</ul>
+<p><img src="./image/situation_géographique.png" /></p>
+<ul>
+<li>Et enfin nous selectionnons le clavier que nous voulons encore une
+fois le français.</li>
+</ul>
+<p><img src="./image/sélection_clavier.png" /></p>
+<h2 data-number="1.3" id="configuration-du-réseau"><span
+class="header-section-number">1.3</span> <span
+style="color: orange;"><strong>Configuration du
+réseau</strong></span></h2>
+<ul>
+<li>Vu que nous souhaitont créer un serveur nous allons nommer la
+machine server.</li>
+</ul>
+<p><img src="./image/configuration_nom.png" /></p>
+<ul>
+<li>Et nous laissons le domaine vierge.</li>
+</ul>
+<p><img src="./image/configuration_domaine.png" /></p>
+<h2 data-number="1.4" id="création-et-configuration-des-comptes"><span
+class="header-section-number">1.4</span> <span
+style="color: orange;"><strong>Création et configuration des
+comptes</strong></span></h2>
+<ul>
+<li>Vu que nous souhaitons créer un compte root ayant pour mot de passe
+“root”, nous marquons “root” puis le comfirons en l’écrivant de
+nouveau.</li>
+</ul>
+<p><img src="./image/mdp_root.png" /></p>
+<ul>
+<li>et vu que nous voulons aussi créer un compte user se nommant “user”
+nous l’appelons user, et nous lui mettons le mot de passer user.</li>
+</ul>
+<p><img src="./image/création_user.png" /></p>
+<p><img src="./image/mdp_user.png" /></p>
+<h2 data-number="1.5" id="partitionnement-de-lespace-de-stockage"><span
+class="header-section-number">1.5</span> <span
+style="color: orange;"><strong>Partitionnement de l’espace de
+stockage</strong></span></h2>
+<ul>
+<li>Vu que nous voulons pas nous compliquer la vie, nous selectionnant
+le mode “assisté - utiliser un disque entier” puis nous sélectionnant le
+disque et enfin nous mettons tout dans une seul partition, nous validons
+et appliquons les modifications.</li>
+</ul>
+<p><img src="./image/sélection_type_partition.png" /></p>
+<p><img src="./image/sélection_disque.png" /></p>
+<p><img src="./image/sélection_nombre_partition.png" /></p>
+<p><img src="./image/confirmation_partition.png" /></p>
+<p><img src="./image/application_partition.png" /></p>
+<h2 data-number="1.6"
+id="configuration-de-loutil-de-gestion-des-paquets"><span
+class="header-section-number">1.6</span> <span
+style="color: orange;"><strong>Configuration de l’outil de gestion des
+paquets</strong></span></h2>
+<ul>
+<li>Tout d’abord nous refusant l’analyse des autres supports
+d’installation.</li>
+</ul>
+<p><img src="./image/analyse_support.png" /></p>
+<ul>
+<li>Puis nous selectionnons la france comme pays pour le miroir de
+l’archive Debian.</li>
+</ul>
+<p><img src="./image/sélection_pays_miroir.png" /></p>
+<ul>
+<li>Et enfin le miroir “debian.polytech-lille.fr”.</li>
+</ul>
+<p><img src="./image/sélection_miroir.png" /></p>
+<h2 data-number="1.7" id="selection-des-logiciels"><span
+class="header-section-number">1.7</span> <span
+style="color: orange;"><strong>Selection des
+logiciels</strong></span></h2>
+<ul>
+<li>Pour les différents logiciel à installer nous
+installons”environnement de bureau Debian” car c’est mieu d’avoir un
+bureau niveau visuel, “<em>MATE</em>” car celui nous ait imposé,
+“serveur web” car correspond à notre besoin de faire un serveur,
+“serveur <em>SSH</em> car lui aussi correspond à notre besoin de faire
+un serveur” et “utilitaires usuels du système” pour avoir logiciel basic
+mais toujours pratique.</li>
+</ul>
+<p><img src="./image/sélection_logiciel.png" /></p>
+<ul>
+<li>Ensuite nous refusons d’installer le programme <em>GRUB</em> sur le
+disque principal.</li>
+</ul>
+<p><img src="./image/installation_GRUB.png" /></p>
+<h2 data-number="1.8" id="commande-à-faire-depuis-la-machine"><span
+class="header-section-number">1.8</span> <span
+style="color: orange;"><strong>Commande à faire depuis la
+machine</strong></span></h2>
+<p>Dans le cas ou une demande du type [0/n] se propose, répondez “o” oui
+“0”, c’est une confirmation.</p>
+<table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Commande</th>
+<th style="text-align: right;">Fonction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">sudo apt update</td>
+<td style="text-align: right;">Met à jour “apt”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">apt install git-all</td>
+<td style="text-align: right;">Installe toutes les configurations et
+fichiers de git</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">apt install sudo</td>
+<td style="text-align: right;">Installe la fonction de “sudo”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">apt install neofetch</td>
+<td style="text-align: right;">Installe Neofetch</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">apt-get install sqlite3</td>
+<td style="text-align: right;">Installe SQLite3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">apt-get install curl</td>
+<td style="text-align: right;">Installe Curl</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">apt-get install bash-completion</td>
+<td style="text-align: right;">Installe Bash-completion</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sudo usermod -aG sudo user</td>
+<td style="text-align: right;">Donne les droits sudo à
+l’utilisateur</td>
+</tr>
+</tbody>
+</table>
+<h2 data-number="1.9" id="installation-de-gitea"><span
+class="header-section-number">1.9</span> <span
+style="color: orange;"><strong>Installation de
+Gitea</strong></span></h2>
+<h3 data-number="1.9.1" id="quelque-informations-sur-gitea"><span
+class="header-section-number">1.9.1</span> <span style="color: green;">
+<strong>Quelque informations sur GITEA</strong></span></h3>
+<ul>
+<li><p>Qu’est ce que GITEA ?</p>
+<p>GITEA est un logiciel de gestion de versions <em>GIT</em>.</p></li>
+<li><p>A quoi peut t-on comparer GITEA ?</p>
+<p>GITEA est comparable à GITHUB ou encore GITLAB.</p></li>
+</ul>
+<h3 data-number="1.9.2" id="comment-linstaller"><span
+class="header-section-number">1.9.2</span> <span style="color: green;">
+<strong>Comment l’installer ?</strong></span></h3>
+<ul>
+<li><p>Dans un premier nous allons faire la commande ci-dessous affin de
+faire un nouvel utilisateur git ainsi qu’un groupe git: “adduser –system
+–group –disabled-password –shell /bin/bash –home /home/git –gecos ‘Git
+Version Control’ git”.</p></li>
+<li><p>puis pour être d’avoir la bonne version de wget.</p></li>
+</ul>
+<p><code>apt install wget</code></p>
+<ul>
+<li>puis pour pouvoir les fichier gitea vers “/usr/local/bin.</li>
+</ul>
+<p><code>sudo mv /tmp/gitea /usr/local/bin</code></p>
+<ul>
+<li>puis pour installer GITEA.</li>
+</ul>
+<p><code>wget -O /tmp/gitea https://dl.gitea.io/gitea/1.15.3/gitea-1.15.3-linux-amd64</code>.</p>
+<ul>
+<li>et enfin les commandes suivantes:</li>
+</ul>
+<pre><code>sudo mv /tmp/gitea /usr/local/bin
+chmod +x /usr/local/bin/gitea
+mkdir -p /var/lib/gitea/{custom,data,indexers,public,log}
+chown git: /var/lib/gitea/{data,indexers,log}
+chmod 750 /var/lib/gitea/{data,indexers,log}
+mkdir /etc/gitea
+chown root:git /etc/gitea
+vchmod 770 /etc/gitea
+wget https://raw.githubusercontent.com/go-gitea/gitea/master/contrib/systemd/gitea.service -P /etc/systemd/system
+systemctl daemon-reload
+systemctl enable --now gitea
+sudo mv /tmp/gitea /usr/local/bin
+chmod +x /usr/local/bin/gitea
+mkdir -p /var/lib/gitea/{custom,data,indexers,public,log}
+chown git: /var/lib/gitea/{data,indexers,log}
+chmod 750 /var/lib/gitea/{data,indexers,log}
+mkdir /etc/gitea
+chown root:git /etc/gitea
+vchmod 770 /etc/gitea
+wget https://raw.githubusercontent.com/go-gitea/gitea/master/contrib/systemd/gitea.service -P /etc/systemd/system
+systemctl daemon-reload
+systemctl enable --now gitea</code></pre>
+<h3 data-number="1.9.3" id="partie-avec-affiche-visuel"><span
+class="header-section-number">1.9.3</span> <span style="color: green;">
+<strong>Partie avec affiche visuel</strong></span></h3>
+<ul>
+<li><p>maintenant vous allez aller sur : http://localhost:3000/</p></li>
+<li><p>Vous y choisirez SQLite3 pour le type de base de
+données.</p></li>
+<li><p>Et en chemin vous prendrez un chemin absolut menant vers
+“/var/lib/gitea/data/gitea.db”</p></li>
+</ul>
+<h1 data-number="2"
+id="les-questions-de-vocabulaire-et-de-culture-informatique"><span
+class="header-section-number">2</span> <span
+style="color: pink;"><strong>Les questions de vocabulaire et de culture
+informatique</strong></span></h1>
+<h2 data-number="2.1" id="les-questions-de-vocabulaire"><span
+class="header-section-number">2.1</span> <span
+style="color: orange;"><strong>Les questions de
+vocabulaire</strong></span></h2>
+<ul>
+<li><p>Que signifie “64-bit” dans “Debian 64-bit” ?</p>
+<p>Les 64 bits correspondent à la façon dont le processeur d’un
+ordinateur (également appelé <em>CPU</em>) gère les
+informations.</p></li>
+<li><p>Quelle est la configuration réseau utilisée par défaut ?</p>
+<p>127.0.0.1/8</p></li>
+<li><p>Quel est le nom du fichier <em>XML</em> contenant la
+configuration de votre machine ?</p>
+<p>Le fichier est :Sae_203.vbox-prev</p></li>
+<li><p>Sauriez-vous le modifier directement ce fichier de configuration
+pour mettre 2 processeurs à votre machine ?</p>
+<p>Oui en modifiant le code suivant : &lt;CPU count=“1”/&gt; en &lt;CPU
+count=“2”/&gt;</p></li>
+<li><p>Qu’est-ce qu’un fichier iso bootable ?</p>
+<p>En effet un fichier ISO est juste un fichier image créé à partir d’un
+<em>CD</em> ou d’un <em>DVD</em> (des logiciels, des jeux, etc.). Vous
+pouvez donc transformer votre clé <em>USB</em> pour qu’elle se comporte
+en <em>CD</em> ou <em>DVD</em>. Le seul moment où elle a besoin d’être
+bootable c’est si vous mettez l’<em>ISO</em> d’un système d’exploitation
+dessus.</p></li>
+<li><p>Qu’est-ce que <em>MATE</em> ? <em>GNOME</em> ?</p>
+<p>MATE (prononcer maté à l’espagnole) est un environnement de bureau
+libre utilisant (dans un premier temps) la boîte à outils GTK+ 3.x et
+destiné aux systèmes d’exploitation apparentés à <em>UNIX</em>. Il
+consiste en un fork de <em>GNOME</em> et son nom vient du yerba maté
+dont les feuilles sont utilisées pour préparer une boisson stimulante en
+Amérique latine 3 .</p></li>
+<li><p>Qu’est-ce qu’un serveur web ?</p>
+<p>Un « serveur web » peut faire référence à des composants logiciels
+(software) ou à des composants matériels (hardware) ou à des composants
+logiciels et matériels qui fonctionnent ensemble.</p>
+<ul>
+<li>Au niveau des composants matériels, un serveur web est un ordinateur
+qui stocke les fichiers qui composent un site web (par exemple les
+documents HTML, les images, les feuilles de style CSS, les fichiers
+JavaScript) et qui les envoie à l’appareil de l’utilisateur qui visite
+le site. Cet ordinateur est connecté à Internet et est généralement
+accessible via un nom de domaine tel que mozilla.org.</li>
+<li>Au niveau des composants logiciels, un serveur web contient
+différents fragments qui contrôlent la façon dont les utilisateurs
+peuvent accéder aux fichiers hébergés. On trouvera au minimum un serveur
+<em>HTTP</em>. Un serveur <em>HTTP</em> est un logiciel qui comprend les
+URL et le protocole <em>HTTP</em> (le protocole utilisé par le
+navigateur pour afficher les pages web).</li>
+</ul></li>
+<li><p>Qu’est-ce qu’un serveur <em>SSH</em> ?</p>
+<p>SSH, ou Secure Socket Shell, est un protocole réseau qui permet aux
+administrateurs d’accéder à distance à un ordinateur, en toute sécurité.
+SSH désigne également l’ensemble des utilitaires qui mettent en œuvre le
+protocole.</p></li>
+<li><p>Qu’est-ce qu’un serveur mandataire ?</p>
+<p>Un serveur mandataire ou proxy (de l’anglais) est un serveur
+informatique qui a pour fonction de relayer des requêtes entre un poste
+client et un serveur. Les serveurs mandataires sont notamment utilisés
+pour assurer les fonctions suivantes :</p>
+<ul>
+<li>mémoire cache ;</li>
+<li>la journalisation des requêtes (” logging “) ;</li>
+<li>la sécurité du réseau local ;</li>
+<li>le filtrage et l’anonymat.</li>
+</ul>
+<p>L’utilité des serveurs mandataires est importante, notamment dans le
+cadre de la sécurisation des systèmes d’information pour ces questions,
+vous devrez trouver les réponses dans la documentation officielle et
+nous</p></li>
+<li><p>À quoi servent les suppléments invités ? Donner 2 principales
+raisons de les installer.</p>
+<p>Elles permettent : D’améliorer l’affichage graphique. De partager le
+presse-papier entre la machine virtuelle et la machine hôte. La
+possibilité de partager des répertoires entre la machine virtuelle et la
+machine hôte.</p></li>
+<li><p>À quoi sert la commande mount (dans notre cas de figure et dans
+le cas général)</p>
+<p>La commande mount permet de demander au système d’exploitation de
+rendre un système de fichiers accessible, à un emplacement spécifié (le
+point de montage). La commande mount monte un système de fichiers
+indiqué comme répertoire à l’aide du paramètre Noeud:Répertoire, sur le
+répertoire spécifié par le paramètre Répertoire. Une fois la commande
+mount exécutée, le répertoire indiqué devient le répertoire racine du
+nouveau système de fichiers monté. Si vous entrez la commande mount sans
+option, elle affiche les informations suivantes sur les systèmes de
+fichiers montés :</p>
+<ul>
+<li>le noeud (si le montage est éloigné)</li>
+<li>l’objet monté</li>
+<li>le point de montage</li>
+<li>le type de système de fichiers virtuel</li>
+<li>l’horodatage du montage</li>
+<li>toute option de montage</li>
+</ul>
+<p>Vous pouvez utiliser le répertoire /mnt comme point de montage local
+ou vous pouvez créer un répertoire à l’aide de la commande mkdir. Tout
+répertoire créé à l’aide de la commande mkdir doit être un
+sous-répertoire de votre répertoire d’accueil.</p></li>
+<li><p>Quel est la version du noyau Linux utilisé par votre VM ?
+N’oubliez pas, comme pour toutes les questions, de justifier votre
+réponse.</p>
+<p>Debian 12 version la plus simple à trouver de par le fait que lien de
+téléchargement sur la page principal de debian télécharge la version
+12.</p></li>
+</ul>
+<h2 data-number="2.2" id="les-questions-sur-debian"><span
+class="header-section-number">2.2</span> <span
+style="color: orange;"><strong>Les questions sur
+Debian</strong></span></h2>
+<ul>
+<li><p>1.Qu’est-ce que le Projet Debian ? D’où vient le nom Debian ?</p>
+<p>La maintenance Le projet Debian est un groupe mondial de volontaires
+qui s’efforcent de produire un système d’exploitation qui soit composé
+exclusivement de logiciels libres. Le principal produit de ce projet est
+la distribution Debian GNU/Linux, qui inclut le noyau Linux ainsi que
+des milliers d’applications pré empaquetées. Divers types de processeurs
+sont gérés à des degrés divers, en incluant les architectures x86 32 ou
+64 bits, ARM, MIPS, PowerPC et IBM S/390. Le nom Debian est issu des
+prénoms du créateur de cette distribution GNU Linux Ian Murdock et de
+son épouse Debra.</p>
+<p>https://fr.wikipedia.org/wiki/Debian</p></li>
+<li><p>2.Il existe 3 durées de prise en charge (support) de ces versions
+: la durée minimale, la durée en support long terme (<em>LTS</em>) et la
+durée en support long terme étendue (<em>ELTS</em>). Quelle sont les
+durées de ces prises en charge ?</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">version de prise en charge</th>
+<th style="text-align: right;">durée</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>LTS</em></td>
+<td style="text-align: right;">2 ans</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>Standard</em></td>
+<td style="text-align: right;">5 ans</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>ELTS</em></td>
+<td style="text-align: right;">5 ans</td>
+</tr>
+</tbody>
+</table>
+<p>https://wiki.debian.org/fr/LTS</p></li>
+<li><p>3.Pendant combien de temps les mises à jour de sécurité
+seront-elles fournies ?</p>
+<p>Elles sont fait trois années après la publication.</p></li>
+<li><p>4.Combien de versions au minimum sont activement maintenues par
+Debian ? Donnez leur nom générique (= les types de distribution).</p>
+<p>3 versions</p>
+<ul>
+<li>STABLE</li>
+<li>TESTING</li>
+<li>UNSTABLE</li>
+</ul>
+<p>https://wiki.debian.org/fr/LTS</p></li>
+<li><p>5.Chaque distribution majeur possède un nom de code différent.
+Par exemple, la version majeur actuelle (Debian 12) se nomme bookworm.
+D’où viennent</p>
+<p>Les différents noms proviennent des noms des jouets de la saga TOY
+STORY.</p>
+<p>https://en.wikipedia.org/wiki</p></li>
+<li><p>6.L’un des atouts de Debian fut le nombre d’architecture
+(≈processeurs) officiellement prises en charge. Combien et lesquelles
+sont prises en charge par la version Bullseye ?</p>
+<p>Il y a 9 architecture pris en charge par la version Bullseye:</p>
+<ul>
+<li>amd64 pour les PC AMD64 64 bits / Intel EM64T / x86-64.</li>
+<li>i386 pour les PC i386 32 bits / Intel IA-32.</li>
+<li>ppc64el pour PowerPC 64 bits little-endian Motorola/IBM
+PowerPC.</li>
+<li>s390x pour les serveurs IBM S/390 64 bits.</li>
+<li>armel pour ARM.-armhf pour les anciens matériels ARM et les
+architectures 32 bits plus récentes.</li>
+<li>arm64 pour les architectures ARM 64 bits Arch64.</li>
+<li>mipsel pour MIPS 32 bits little-endian.</li>
+<li>mips64el pour MIPS 64 bits little-endian.</li>
+</ul>
+<p>https://www.debian.org/releases/bullseye/arm64/release-notes/ch-whats-new.fr.html#idm120</p></li>
+<li><p>7.Première version avec un nom de code</p>
+<ul>
+<li><p>Quelle a était le premier nom de code utilisé ?</p></li>
+<li><p>Quand a-t-il été annoncé ?</p></li>
+<li><p>Quelle était le numéro de version de cette distribution ?</p>
+<ul>
+<li>Buzz</li>
+<li>19 août 1991</li>
+<li>0.99.14</li>
+</ul></li>
+</ul></li>
+<li><p>8.Dernière nom de code attribué</p>
+<ul>
+<li>Quel est le dernier nom de code annoncée à ce jour ?</li>
+<li>Quand a-t-il été annoncé ?</li>
+<li>Quelle est la version de cette distribution ?</li>
+</ul></li>
+<li><p>Bookworm</p></li>
+<li><p>23 avril 2022</p></li>
+<li><p>La version 12</p></li>
+</ul>
+<h2 data-number="2.3" id="question-sur-git"><span
+class="header-section-number">2.3</span> <span
+style="color: orange;"><strong>Question sur
+<em>GIT</em></strong></span></h2>
+<ul>
+<li>Qu’est-ce que le logiciel gitk ? Comment se lance-t-il ?</li>
+</ul>
+<p>Gitk est un navigateur de dépôt graphique, le premier de son genre.
+Il peut être considéré comme un encapsuleur graphique pour git log . Il
+permet d’explorer et de visualiser l’historique d’un dépôt. Gitk se
+lance en effectuant la commande suivante “gitk &amp;”, il sera affecté
+au dossier dans lequel vous l’utilisez.</p>
+<ul>
+<li>Qu’est-ce que le logiciel git-gui ? Comment se lance-t-il ?</li>
+</ul>
+<p>Git GUI. C’est un des outils de base fourni avec Git lors de son
+installation. Il va vous permettre entre autre de voir le diff des
+modifications en cours dans votre workspace ou encore de faire des
+commits et des pushs et bien plus encore.Pour lancer git-gui, effectuez
+la commande suivante “git citool”.</p>
+<h2 data-number="2.4" id="les-questions-sur-gitea"><span
+class="header-section-number">2.4</span> <span
+style="color: orange;"><strong>Les questions sur GITEA
+</strong></span></h2>
+<ul>
+<li><p>La version utilisé de GITEA peut être grâce à la commande :</p>
+<p><code>VERSION=&lt;THE_LATEST_GITEA_VERSION&gt;</code></p></li>
+<li><p>Pour pouvoir mettre à jour le binaire du service sans devoir tout
+reconfigurer il faut utiliser la commande :</p>
+<p><code>wget -O /tmp/gitea https://dl.gitea.io/gitea/${VERSION}/gitea-${VERSION}-linux-amd6</code></p>
+<pre><code>  cependant la version 1.22-dev n&#39;existe pas</code></pre></li>
+</ul>
+<h1 data-number="3" id="les-difficultés-rencontrés"><span
+class="header-section-number">3</span> <span
+style="color: pink;"><strong>Les difficultés
+rencontrés</strong></span></h1>
+<p>Le majeur problème que nous avons renconté est la gestion du temps
+ainsi l’automatisation de la machine virtuelle ainsi que l’installation
+de Gitea.</p>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Lors de cette SAÉ nous avons revu comment installé une machine virtuelle de manière manuelle, nous avons aussi appris comment en installé une de manière automatique avec tous les logiciels nécessaire à son bon fonctionnement. Dans un second nous avons appris à configurer GITk ainsi que GITEA. Cette SAÉ nous a aussi permi d'en apprendre plus sur l'histroire de Debian.

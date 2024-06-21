@@ -1,0 +1,12 @@
+4.2
+Question 1
+https://fr.wikipedia.org/wiki/Debian
+
+Questions 2&4
+https://wiki.debian.org/fr/LTS
+
+Question 5
+https://en.wikipedia.org/wiki/Debian_version_history#Naming_convention
+
+Question 6
+https://www.debian.org/releases/bullseye/arm64/release-notes/ch-whats-new.fr.html#idm120
