@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+    color: white;
+}
+h2{
+    color: lightgreen;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    font-size: 36px;
+}
+h1{
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+}
+em{
+    color: blueviolet;
+}
+a em{
+    color: skyblue;
+}
+img{
+    width : 500px;
+height : 500px;
+display: block;
+  margin: auto;
+  width: 50%;
+}
+ul{
+    background-color: darkgrey;
+}
+code{
+    color: crimson;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+hr {
+    width: 540px;
+    color: #999;
+}
+table {
+    border-collapse: collapse;
+    margin: 1em 1em;
+    border: 1px solid #CCC;
+}
+table thead {
+    background-color: #EEE;
+}
+table thead td {
+    color: #666;
+}
+table td {
+    padding: 0.5em 1em;
+    border: 1px solid #CCC;
+}

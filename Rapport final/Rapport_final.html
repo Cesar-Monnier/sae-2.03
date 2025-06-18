@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Rapport_final</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href=".\css\style.css" />
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#installation-manuelle"
+id="toc-installation-manuelle">Installation manuelle :</a></li>
+<li><a href="#installation-automatique"
+id="toc-installation-automatique">Installation automatique :</a></li>
+<li><a href="#gitea" id="toc-gitea">Gitea</a></li>
+<li><a href="#diverses-questions" id="toc-diverses-questions">Diverses
+questions</a>
+<ul>
+<li><a href="#des-questions-sur-debians"
+id="toc-des-questions-sur-debians">Des questions sur debians</a></li>
+</ul></li>
+</ul>
+</nav>
+<p><em>Monnier César</em><br />
+<em>De Witte Raphaël</em><br />
+<em>Lebbrecht Evan</em><br />
+<strong>groupe C</strong>   # SAÉ 1.03 : Rapport intermediaire</p>
+<h2 id="installation-manuelle">Installation manuelle :</h2>
+<p>Commençons par l’installation manuelle, pour commencer, téléchargez
+<em>l’Iso bootable de Debian</em> sur le site officiel <a
+href="https://www.debian.org/"><em>debian.org</em></a> puis allez sur le
+logiciel VirtualBox, puis appuyez sur le bouton « nouvelle », donnez un
+nom à votre nouvelle machine, puis choisissez le type de machine Linux,
+et prenez la version Debian 12 <em>Bookworm 64bits</em>. Choisissez
+suivant plusieurs fois, puis <strong>« <em>Terminer</em> »</strong> <img
+src="image/instalation_maunelle_1.png"
+alt="Menu de création de la machine virtuelle" /></p>
+<pre><code>Vous voici dans _Grub_, ceci est un installateur qui va vous permettre de configurer votre machine une première fois.</code></pre>
+<p>Allez ensuite dans l’onglet configuration, puis stockage, cliquez sur
+le disque bleu, puis dans la partie <strong>« choisissez un lecteur
+optique »</strong>, cliquez sur le disque bleu et <strong>« choisir un
+fichier disque »</strong>, ici, sélectionnez votre fichier
+<em>“.iso”</em> précédemment téléchargé, qui fermez les menus.</p>
+<p>Tout est prêt ! Vous pouvez désormais démarrer votre machine. Vous
+voici dans <em>Grub</em>, ceci est un installateur qui va vous permettre
+de configurer votre machine une première fois.</p>
+<figure>
+<img src="image/instalation_maunelle_2.png"
+alt="Choix du mode d’installation de debian" />
+<figcaption aria-hidden="true">Choix du mode d’installation de
+debian</figcaption>
+</figure>
+<p>Maintenant, vous allez commencer par avoir un menu vous demandant de
+choisir le langage de notre système, choisissez français puis continuez.
+Choisissez ensuite votre zone géographique (pour permettre à l’heure de
+se calibrer). Enfin, choisissez le type de clavier que vous souhaitez
+utiliser (nous recommandons français) laissez le charger… <img
+src="image/instalation_maunelle_3.png"
+alt="Choix du nom de la machine" /></p>
+<p>Vous devriez atteindre ce menu, qui vous permettra de donner un nom a
+votre machine, puis continuez. Vous n’avez pas besoin d’un nom de
+domaine, continuez sans rien remplir.</p>
+<p>Vous allez maintenant configurer les utilisateurs</p>
+<ul>
+<li>Le <em>superuser</em> (<em>root</em>) est l’administrateur de la
+machine et vous permettra de configurer votre machine à 100%, choisissez
+donc un mot de passe puis continuez.</li>
+<li>L’utilisateur normal, choisissez-lui un nom, un identifiant de mot
+de passe puis continuez.</li>
+</ul>
+<p>Laissez-le charger… Vous allez ensuite configurer la partition de
+disque, pour commencer nous vous conseillons de choisir assisté,
+choisissez votre disque, puis « <em>tout dans une seule partition</em>
+». <img src="image/instalation_maunelle_4.png"
+alt="Partionnement du disque dur" /></p>
+<p>Une fenêtre explicative apparaît, choisissez continuer, confirmez une
+dernière fois. Puis laissez-le s’installer. S’il vous demande d’analyser
+d’autres supports, choisissez non.</p>
+<p>Vous allez maintenant choisir un miroir (permet d’installer des
+applications), choisissez France, puis deb.debian.org si vous souhaitez
+le plus rapide, celui que vous souhaitez sinon. Puis continuez. Vous
+n’avez pas de mandataire, laissez blanc et continuez comme cela continue
+à charger… On vous demande ensuite si vous voulez partager vos données
+avec Debian, c’est comme vous le souhaitez.</p>
+<figure>
+<img src="image/instalation_maunelle_5.png"
+alt="Sélection des logiciels" />
+<figcaption aria-hidden="true">Sélection des logiciels</figcaption>
+</figure>
+<p>Ici, on vous demande ce que vous voulez installer sur votre système
+de base, choisissez comme sur l’image puis continuez.</p>
+<p>L’installation se finalise. On vous demande d’installer
+<em>grub</em>, qui est votre bootladder (permet de démarrer Debian)
+choisissez oui, votre disque puis laissez la machine faire jusqu’au
+redémarrage.</p>
+<p>Vous pouvez désormais utiliser votre machine en utilisant ces
+commandes simples :</p>
+<ul>
+<li><code>apt install nom_du_logiciel</code> pour installer un
+logiciel</li>
+<li><code>apt purge nom_du_logiciel</code> pour désinstaller un
+logiciel</li>
+<li><code>useradd (username)</code> pour ajouter un uttilisateur</li>
+<li><code>passwd (username)</code> pour ajouter/changer un mot de
+passe</li>
+<li><code>groupadd [nomgroupe]</code> pour créer un nouveau groupe</li>
+<li><code>usermod -aG (username) [nomgroupe]</code> pour ajouter un
+uttilisateur a un groupe pour ajouter les droits
+<code>sudo (admin) a un user : usermod -aG (username) sudo</code>.</li>
+</ul>
+<figure>
+<img src="image/instalation_maunelle_6.png"
+alt="Insersion du l’image CD" />
+<figcaption aria-hidden="true">Insersion du l’image CD</figcaption>
+</figure>
+<p>Ensuite allez en haut de votre fenêtre pour votre VM et cliquez sur «
+insérer l’image CD … » comme sur l’image puis tapez dans votre terminal
+les commandes suivantes : - <code>sudo mount /dev/cdrom /mnt</code> -
+<code>sudo /mnt/VBoxLinuxAdditions.run</code></p>
+<p>Votre machine est maintenant configurée !</p>
+<h2 id="installation-automatique">Installation automatique :</h2>
+<p>Nous allons maintenant passer à l’installation automatique qui est
+beaucoup plus rapide, récupérez le fichier zip autoinstall_Debian.zip de
+Moodle.</p>
+<p>Créez une nouvelle machine comme montré plus haut : sur le logiciel
+<em>VirtualBox</em>, appuyez sur le bouton <strong>« nouvelle
+»</strong>, donnez un nom à votre nouvelle machine, puis choisissez le
+type de machine <em>Linux</em>, et prenez la version <em>Debian 12
+Bookworm 64bits</em>. Choisissez suivant plusieurs fois, puis <strong>«
+Terminer »</strong>. Dans les dossiers, trouvez votre machine (peut être
+fait plus simplement en allant dans machine &gt; voir dans l’explorateur
+de fichiers) <img src="image/instalation_auto_1.png"
+alt="Afficher l’explorateur de fichier" /></p>
+<p>Puis décompressez ici votre archive.zip téléchargée plus tôt. A
+l’aide de votre terminal, placez-vous dans ce dossier, puis executez la
+commande suivante : -
+<code>sed -i -E "s/(--iprt-iso-maker-file-marker-bourne-sh).*$/\1=$(cat /proc/sys/kernel/random/uuid)/" S203-Debian12.viso</code>
+-
+<code>sed -i -E "s/(--iprt-iso-maker-file-marker-bourne-sh).*$/\1=$(cat /proc/sys/kernel/random/uuid)/" S203-Debian12.viso</code></p>
+<p>Cela donnera à votre fichier un <em>uid</em> aléatoire et le rendra
+utilisable faites ensuite un <strong>« nano »</strong> sur le fichier
+<em>preseed.cfg</em>, ce fichier sert à la configuration automatique
+lors de l’installation. Puis faites les changements suivants : 1. Ligne
+56 ajoutez <em>sudo</em> à la fin (cela créera le groupe sudo et
+l’ajoutera a l’user). 2. Ligne 83 ajoutez : <em>mate-desktop</em> (cela
+installera l’environnement graphique de Mate par défaut). 3. Enfin,
+ligne 84 tapez :
+<code>d-i pkgsel/include string sudo git curl bash-completion neofetch</code>
+(cela installera automatiquement les pakages sudo, git, ect…).</p>
+<p>Bravo, vous n’avez plus qu’à aller dans l’onglet configuration, puis
+stockage, cliquez sur le disque bleu, puis dans la partie <strong>«
+choisissez un lecteur optique »</strong>, cliquez sur le disque bleu et
+<strong>« choisir un fichier disque »</strong>, ici, sélectionnez votre
+fichier <em>.viso</em>, puis fermez les menus.</p>
+<p>Vous pouvez lancer votre machine, tout est fait automatiquement et
+plus rien n’est à configurer. Nous allons maintenant configurer
+<em>git</em> pour une utilisation confortable : Nous avons au préalable
+installé une machine virtuelle avec git préinstaller dessus, utilisez
+donc les commandes suivantes afin de configurer votre dépôt local git
+:</p>
+<ul>
+<li><p><code>git config --global user.name ''votrenomprenom"</code></p></li>
+<li><p><code>git config --global user.email "votre@email"</code></p></li>
+<li><p><code>git config --global init.defaultBranch "master"</code></p></li>
+<li><p>ces trois commandes permettent de :</p>
+<ol type="1">
+<li>Créer un ‘’compte’’ git a votre nom</li>
+<li>de l’associer à votre mail afin d’en faire une <strong>« signature
+»</strong></li>
+<li>permet de créer une <em>branche principale</em></li>
+</ol>
+<p>Nous allons maintenant installer une interface graphique permettant
+de visualiser et gérer les <em>dépôts git</em>. Allez sur le site <a
+href="http://git-scm.com/download/gui/linux">git-scm.com</a> puis
+prendre la distribution que vous souhaitez (dans ce guide nous allons
+utiliser <em>SmartGit</em>) cliquez donc sur <em>smartGit</em>, puis
+<strong>« download for linux »</strong>.</p>
+<p>L’avantage de <em>SmartGit</em> est qu’il est très simple à
+installer, comme expliqué dans le <em>readme</em> du dossier téléchargé,
+il suffit de le décompresser dans le dossier de votre choix et de lancer
+le script en se plaçant dans le</p></li>
+</ul>
+<figure>
+<img src="image/instalation_auto_2.png"
+alt="Téléchargement pour linux" />
+<figcaption aria-hidden="true">Téléchargement pour linux</figcaption>
+</figure>
+<pre><code>dossier et tapant la commande :</code></pre>
+<ul>
+<li><code>bin/smartgit.sh</code> Cela lance alors une interface, nous
+vous conseillons alors de choisir le mode standard et de confirmer.</li>
+</ul>
+<figure>
+<img src="image/instalation_auto_3.png"
+alt="Confguration de SmartGit" />
+<figcaption aria-hidden="true">Confguration de SmartGit</figcaption>
+</figure>
+<p>Cela vous demande alors de choisir un nom et un mail, si vous avez
+tapé les commandes listées plus haut, cela serra rempli
+automatiquement.</p>
+<figure>
+<img src="image/instalation_auto_4.png" alt="Terme d’utilisation" />
+<figcaption aria-hidden="true">Terme d’utilisation</figcaption>
+</figure>
+<p>Cela vous demande alors de choisir un nom et un mail, si vous avez
+tapé les commandes listées plus haut, cela serra rempli
+automatiquement.</p>
+<h2 id="gitea">Gitea</h2>
+<p>Pour installer <em>gitea</em> :</p>
+<p>Premièrement, afin de simplifier les choses, nous allons faire une
+redirection de ports, cela permettra d’accéder à l’application
+<em>gitea</em> de la machine virtuelle plus facilement une fois
+installée.</p>
+<p>Allez sur le logiciel de <em>VirtualBox</em>, puis dans le menu
+<strong>« configuration »</strong> et enfin <strong>‘’réseau’’</strong>,
+cliquez sur avancer, puis sur le bouton ‘’redirection de ports’’, pour
+cet exemple, nous allons utiliser le_ port 3000_.</p>
+<figure>
+<img src="image/gitea_1.png" alt="Redirection du port 3000" />
+<figcaption aria-hidden="true">Redirection du port 3000</figcaption>
+</figure>
+<p>Cette étape va permettre d’accéder au port de la machine en tapant
+<em>localhost :3000</em> dans le navigateur internet. Cliquez donc sur
+le bouton vert, puis remplissez comme suit :</p>
+<figure>
+<img src="image/gitea_2.png" alt="Règle de redirection de ports" />
+<figcaption aria-hidden="true">Règle de redirection de
+ports</figcaption>
+</figure>
+<p>Vous pouvez maintenant lancer votre machine virtuelle et vous
+connecter en tant que root (pour simplifier les choses). Nous allons
+installer <em>gitea</em>. Pour ce tuto, nous allons le faire à partir
+des binaires. Les étapes de l’installations peuvent aussi être trouvées
+ici : <a
+href="https://docs.gitea.com/installation/install-from-binary">docs.gitea.com</a>
+-
+<code>wget -O gitea https://dl.gitea.com/gitea/1.23.5/gitea-1.23.5-linux-amd64</code>
+Cette commande sert à télécharger les binaires en premier lieu, a
+l’heure ou ce tuto est écrit, il télécharge la version la plus récente
+qui est la 1.23.5, libre à vous de modifier la commande avec la bonne
+version si ce tuto n’est plus à jour. - Puis :
+<code>chmod +x gitea</code> Qui permettra de donner les droits
+d’exécutions aux fichiers. - Ensuite :
+<code>wget https://dl.gitea.com/gitea/1.23.5/gitea-1.23.5-linux-amd64.asc gpg --keyserver keys.openpgp.org --recv 7C9E68152594688862D62AF62D9AE806EC1592E2 gpg --verify gitea-1.23.5-linux-amd64.asc gitea-1.23.5-linux-amd64</code></p>
+<p>Ces commandes servent à télécharger un fichier de vérification, puis
+à l’utiliser afin de s’assurer que tous les fichiers sont bien en
+place.</p>
+<p>Enfin tapez les commandes suivantes : - <code>adduser \</code><br />
+- <code>--system \</code> - <code>--shell /bin/bash \</code> -
+<code>--gecos 'Git Version Control' \</code> - <code>--group \</code> -
+<code>--disabled-password \</code> - <code>--home /home/git \</code> -
+<code>git</code> Cela permet de créer un utilisateur par défaut, sans
+nom d’utilisateur ni mot de passe, qui servira uniquement à
+l’installation.</p>
+<p>On va maintenant créer les dossiers de gitea manuellement tout en
+leur accordant les autorisations nécessaires :</p>
+<ul>
+<li><code>mkdir -p /var/lib/gitea/custom</code></li>
+<li><code>mkdir -p /var/lib/gitea/data</code></li>
+<li><code>mkdir -p /var/lib/gitea/log</code></li>
+<li><code>chown -R git:git /var/lib/gitea/</code></li>
+<li><code>chmod -R 750 /var/lib/gitea/</code></li>
+<li><code>mkdir /etc/gitea</code></li>
+<li><code>chown root:git /etc/gitea</code></li>
+<li><code>chmod 770 /etc/gitea</code></li>
+</ul>
+<p>Enfin, exportez gitea dans le bon dossier a l’aide de ces commandes :
+- <code>export GITEA_WORK_DIR=/var/lib/gitea/</code> -
+<code>cp gitea /usr/local/bin/gitea</code></p>
+<p>Une dernière commande afin de donner tous les droits d’accès
+nécessaires à gitea : - <code>chmod 777 /bin</code></p>
+<p>Vous pouvez maintenant vous connecter en tant qu’utilisateur normal,
+et taper la commande <em>gitea</em> Afin de lancer gitea, puis pour y
+accéder, allez dans votre navigateur internet et cherchez :
+<em>localhost :3000/</em></p>
+<p>Puis vous devriez tomber sur une fenêtre comme celle-ci :</p>
+<figure>
+<img src="image/gitea_3.png" alt="Configuration gitea" />
+<figcaption aria-hidden="true">Configuration gitea</figcaption>
+</figure>
+<p>Allez tout en bas, l’onglet <strong>‘’paramètres du compte
+utilisateur’’</strong> Et remplissez comme suit : 1. Nom d’uttilisateur
+: <em>gitea</em> 2. Mot de passe : <em>gitea</em> 3. E-mail :
+<em>git@localhost</em></p>
+<p>Vous pouvez ensuite cliquer sur le bouton <strong>‘’installer
+gitea’’</strong> et le reste de l’installation ce fait
+automatiquement.</p>
+<p>Vous pouvez maintenant utiliser gitea avec cette interface : *<img
+src="image/gitea_4.png" alt="Installer gitea" /></p>
+<p>Pour des raisons de sécurité, nous allons enfin retirer certains
+droits d’accès aux dossiers de gitea afin de protéger votre ordinateur,
+dans un terminal en root tapez ces deux commandes : -
+<code>chmod 750 /etc/gitea</code> -
+<code>chmod 640 /etc/gitea/app.ini</code></p>
+<p>Tout est prêt ! Vous pouvez désormais utiliser votre ordinateur
+configuré correctement, et utiliser les différents outils <em>gitea</em>
+et <em>Smartgit</em> afin d’utiliser votre machine de manière
+optimale.</p>
+<h2 id="diverses-questions">Diverses questions</h2>
+<h3 id="des-questions-sur-debians">Des questions sur debians</h3>
+<ol type="1">
+<li><p><em><em>Que signifie “64-bit” dans Debian 64-bit
+?</em></em><br />
+Un système d’exploitation de 64 bits est un type de système
+d’exploitation d’ordinateur conçu pour fonctionner avec des processeurs
+capables de traiter 64 bits de données à la fois. Source : <a
+href="https://canada.lenovo.com/fr/ca/en/glossary/64-bit-system/?orgRef=https%253A%252F%252Fwww.google.com%252F">canada.lenovo.com</a></p></li>
+<li><p><em><em>Quelle est la configuration réseau utilisée par défaut
+?</em></em><br />
+L’interface de boucle locale est identifiée par le système par lo, et
+possède l’adresse IP par défaut « 127.0.0.1 ». Elle est visible via la
+commande ifconfig. Source : Source : <a
+href="https://guide.ubuntu-fr.org/server/network-configuration.html#:~:text=L&#39;interface%20de%20boucle%20locale,visible%20via%20la%20commande%20ifconfig.&amp;text=Par%20d%C3%A9faut%2C%20il%20devrait%20y,votre%20interface%20de%20boucle%20locale.">ubuntu-fr.org</a></p></li>
+<li><p><em><em>Quel est le nom du fichier XML contenant la configuration
+de votre machine ?</em></em><br />
+La machine à pour nom : <strong>“sae203.vbox”</strong>.</p></li>
+<li><p><em><em>Sauriez-vous le modifier directement ce fichier de
+configuration pour mettre 2 processeurs à votre machine
+?</em></em><br />
+pour mettre deux processeurs à la machine, il faut Changer la ligne 23
+(<code>&lt;CPU&gt;</code>) en :
+<code>&lt;CPU count=”2”&gt;</code></p></li>
+</ol>
+<p>Ou pour faire plus simple, on peut aller dans l’app virtualbox,
+sélectionner la machine, aller dans Configuration, Système, Processeur,
+Processors et changer la valeur CPU tout à droite en 2.</p>
+<ol start="5" type="1">
+<li><p><em><em>Qu’est-ce qu’un fichier iso bootable ?</em></em><br />
+un fichier iso bootable est un logiciel s’apparentant à une image
+disque, conçu pour démarrer au lancement de la machine, la machine
+démarre alors configurée comme l’image disque cela permet d’installer
+des systèmes (OS) par exemple source : <a
+href="https://www.winzip.com/fr/learn/file-formats/iso/#:~:text=Un%20fichier%20ISO%20amor%C3%A7able%20est,installer%20un%20syst%C3%A8me%20d&#39;exploitation.">winzip.com</a></p></li>
+<li><p><em><em>Qu’est-ce que MATE ? GNOME ?</em></em><br />
+GNOME est un environnement de bureau linux dont MATE est un dérivé, ils
+servent a avoir une interface graphique personnalisées et des GNOME est
+un environnement de bureau linux dont MATE est un dérivé, ils servent a
+avoir une interface graphique personnalisées et des applications
+préinstallées MATE (prononcer maté à l’espagnole) est un environnement
+de bureau libre utilisant (dans un premier temps) la boîte à outils GTK+
+3.x et destiné aux systèmes d’exploitation apparentés à UNIX. Il
+consiste en un fork de GNOME et son nom vient du yerba maté dont les
+feuilles sont utilisées pour préparer une boisson stimulante en Amérique
+latine 3 . source :</p></li>
+</ol>
+<ul>
+<li><a
+href="https://openclassrooms.com/fr/courses/7170491-initiez-vous-a-linux/7251996-choisissez-votre-bureau-linux">openclassroom</a></li>
+<li><a
+href="https://debian-facile.org/doc:environnements:environnements">debian.org</a></li>
+</ul>
+<ol start="7" type="1">
+<li><p><em><em>Qu’est-ce qu’un serveur web ? </em></em> Un serveur web
+en linux est un système qui traite la demande d’un utilisateur, récupère
+la page web demandée et l’envoie à l’utilisateur. Un « serveur web »
+peut faire référence à des composants logiciels (software) ou à des
+composants matériels (hardware) ou à des composants logiciels et
+matériels qui fonctionnent ensemble. – Au niveau des composants
+matériels, un serveur web est un ordinateur qui stocke les fichiers qui
+composent un site web (par exemple les documents HTML, les images, les
+feuilles de style CSS, les fichiers JavaScript) et qui les envoie à
+l’appareil de l’utilisateur qui visite le site. Cet ordinateur est
+connecté à Internet et est généralement accessible via un nom de domaine
+tel que mozilla.org. – Au niveau des composants logiciels, un serveur
+web contient différents fragments qui contrôlent la façon dont les
+utilisateurs peuvent accéder aux fichiers hébergés. On trouvera au
+minimum un serveur HTTP. Un serveur HTTP est un logiciel qui comprend
+les URL et le protocole HTTP (le protocole utilisé par le navigateur
+pour afficher les pages web). Source : <a
+href="https://www.ovhcloud.com/fr/learn/what-is-web-server/#:~:text=Un%20serveur%20web%20est%20un,la%20page%20au%20serveur%20web">ovhcloud</a></p></li>
+<li><p><em><em>Qu’est-ce qu’un serveur ssh ?</em></em> un SSH est un
+protocole qui permet au shell d’envoyer des commandes de manière
+sécurisée (le plus souvent en la cryptant) SSH, ou Secure Socket Shell,
+est un protocole réseau qui permet aux administrateurs d’accéder à
+distance à un ordinateur, en toute sécurité. SSH désigne l’ensemble des
+utilitaires qui mettent en œuvre le protocole. Source : <a
+href="https://www.cloudflare.com/fr-fr/learning/access-management/what-is-ssh/#:~:text=Le%20protocole%20Secure%20Shell%20(SSH)%20est%20une%20m%C3%A9thode%20permettant%20d,les%20connexions%20entre%20les%20appareils">cloudfare</a></p></li>
+<li><p><em><em>Qu’est-ce qu’un serveur mandataire ?</em></em> Un serveur
+mandataire aussi appelé serveur proxy est un serveur délégué qui sert de
+relais et qui passe les requêtes d’un utilisateur à une machine. Un
+serveur mandataire ou proxy (de l’anglais) est un serveur informatique
+qui a pour fonction de relayer des requêtes entre un poste client et un
+serveur. Les serveurs mandataires sont notamment utilisés pour assurer
+les fonctions suivantes : – mémoire cache ; – la journalisation des
+requêtes (” logging “) ; – la sécurité du réseau local ; – le filtrage
+et l’anonymat. L’utilité des serveurs mandataires est importante,
+notamment dans le cadre de la sécurisation des systèmes d’information
+pour ces questions, vous devrez trouver les réponses dans la
+documentation officielle et nous source : <a
+href="https://help.ubuntu.com/stable/ubuntu-help/net-proxy.html.fr#:~:text=Qu&#39;est%2Dce%20qu&#39;,vous%20les%20transmettre%20ou%20non">ubuntu</a></p></li>
+<li><p><em><em>Comment peut-on savoir à quels groupes appartient
+l’utilisateur ?</em></em><br />
+c’est stocké dans un fichier dans le système, pour le visualiser,
+utiliser la commande : cat /etc/group source : manuel du
+terminal</p></li>
+<li><p><em><em>Quelle est la version du noyau Linux utilisé par votre VM
+?</em></em><br />
+Debian 12 version la plus simple à trouver de par le fait que lien de
+téléchargement sur la page principale de debian télécharge la version
+12. Nous utilisons celle-ci car celle-ci est la version actuelle. Source
+: <a href="https://www.debian.org/releases/">Debian.org</a></p></li>
+<li><p><em><em>À quoi servent les suppléments invités ?</em></em> Donner
+2 principales raisons de les installer. Elles permettent d’améliorer
+l’affichage graphique. De partager le presse papier entre la machine
+virtuelle et la machine hôte. La possibilité de partager des répertoires
+entre la machine virtuelle et la machine hôte.</p></li>
+<li><p><em><em>À quoi sert la commande mount (dans notre cas de figure
+et dans le cas général) ?</em></em><br />
+La commande mount permet de demander au système d’exploitation de rendre
+un système de fichiers accessible, à un emplacement spécifié (le point
+de montage). La commande mount monte un système de fichiers indiqué
+comme répertoire à l’aide du paramètre Noeud:Répertoire, sur le
+répertoire spécifié par le paramètre Répertoire. Une fois la commande
+mount exécutée, le répertoire indiqué devient le répertoire racine du
+nouveau système de fichiers monté. Si vous entrez la commande mount sans
+option, elle affiche les informations suivantes sur les systèmes de
+fichiers montés : – le noeud (si le montage est éloigné) – l’objet monté
+– le point de montage – le type de système de fichiers virtuel –
+l’horodatage du montage – toute option de montage Vous pouvez utiliser
+le répertoire /mnt comme point de montage local ou vous pouvez créer un
+répertoire à l’aide de la commande mkdir. Tout répertoire créé à l’aide
+de la commande mkdir doit être un sous-répertoire de votre répertoire
+d’accueil. Source : le man du terminal</p></li>
+<li><p><em><em>Qu’est-ce que le Projet Debian ?</em></em><br />
+Debian est une distribution GNU/Linux. Il s’agit d’un système
+d’exploitation complet comprenant des logiciels avec leurs systèmes
+d’installation et de gestion, le tout basé sur le noyau Linux, et des
+logiciels libres (et notamment ceux du projet GNU). Source : <a
+href="https://www.debian.org/doc/manuals/debian-handbook/the-debian-project.fr.html#sect.what-is-debian">debian.org</a></p></li>
+<li><p><em><em>D’où vient le nom Debian ?</em></em> Debian n’est pas un
+acronyme. Ce nom est en réalité une contraction de deux prénoms : celui
+de Ian Murdock et de sa compagne d’alors, Debra. Debra + Ian = Debian.
+SOurce : <a
+href="https://www.debian.org/doc/manuals/debian-handbook/the-debian-project.fr.html#sect.what-is-debian">debian.org</a></p></li>
+<li><p>La maintenance <em><em>Il existe 3 durées de prise en charge
+(support) de ces versions : la durée minimale, la durée en support long
+terme (LTS) et la durée en support long terme étendue (ELTS). Quelles
+sont les durées de ces prises en charge ?</em></em><br />
+Le cycle de vie d’une version couvre cinq ans : une prise en charge
+complète pendant les trois premières années(durée minimale) suivies de
+deux années supplémentaires (durée en support long terme). Les ETLS
+durent 5 ans selon le tableau (durée en support long terme étendue).
+Source : <a
+href="https://www.debian.org/releases/index.fr.html">debian.org</a></p></li>
+<li><p>*__Pendant combien de temps les mises à jour de sécurité
+seront-elles fournies ?_*<br />
+Vu que c’est un des principaux sujets qui sont assurés par le support,
+(peu importe si étendu) c’est jusqu’à la fin de la ELTS. (ou LTS si il
+n’y a pas de ELTS) Source : <a
+href="https://www.debian.org/releases/index.fr.html">debian.org</a></p></li>
+<li><p>*_Nom générique, nom de code et version Le projet dispose à tout
+instant de trois à six versions différentes de chaque logiciel, nommées
+Experimental, Unstable, Testing, Stable, Oldstable, et même
+Oldoldstable. Donc le minimum est 3. Source : <a
+href="https://www.debian.org/releases/index.fr.html">debian.org</a></p></li>
+<li><p><em><em>Chaque distribution majeure possède un nom de code
+différent. Par exemple, la version majeure actuelle (Debian 12) se nomme
+bookworm. D’où viennent les noms de code données aux distributions
+?</em></em><br />
+le nom de code donné aux différentes versions de debian sont des
+personnages de toy story. Vour trouverez ci-dessous un tableau contenant
+le nom, les date de sortie et de fin de vie et les états de chaque
+version :</p></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Date de sortie</th>
+<th>Fin de vie</th>
+<th>État</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buzz</td>
+<td>17/06/1996</td>
+<td>NA</td>
+<td>Archivé</td>
+</tr>
+<tr>
+<td>Rex</td>
+<td>12/12/1996</td>
+<td>NA</td>
+<td>Archivé</td>
+</tr>
+<tr>
+<td>Bo</td>
+<td>5/06/1997</td>
+<td>NA</td>
+<td>Archivé</td>
+</tr>
+<tr>
+<td>Hamm</td>
+<td>24/07/1998</td>
+<td>NA</td>
+<td>stable obsolète</td>
+</tr>
+<tr>
+<td>Slink</td>
+<td>09/03/1999</td>
+<td>NA</td>
+<td>Stable obsolète</td>
+</tr>
+<tr>
+<td>Potato</td>
+<td>14/08/2000</td>
+<td>NA</td>
+<td>Stable obsolète</td>
+</tr>
+<tr>
+<td>Wooody</td>
+<td>19/07/2002</td>
+<td>NA</td>
+<td>Stable obsolète</td>
+</tr>
+<tr>
+<td>Sarge</td>
+<td>06/06/2005</td>
+<td>NA</td>
+<td>Stable obsolète</td>
+</tr>
+<tr>
+<td>Etch</td>
+<td>08/04/2007</td>
+<td>NA</td>
+<td>Stable obsolète</td>
+</tr>
+<tr>
+<td>Lenny</td>
+<td>14/02/2009</td>
+<td>NA</td>
+<td>Stable obsolète</td>
+</tr>
+<tr>
+<td>Squeeze</td>
+<td>6/02/2011</td>
+<td>NA</td>
+<td>Stable obsolète</td>
+</tr>
+<tr>
+<td>Wheezy</td>
+<td>04/05/2013</td>
+<td>NA</td>
+<td>Stable obsolète</td>
+</tr>
+<tr>
+<td>Jessie</td>
+<td>25/04/2015</td>
+<td>17/06/2018</td>
+<td>Archivée</td>
+</tr>
+<tr>
+<td>Strench</td>
+<td>17/06/2017</td>
+<td>18/07/2020</td>
+<td>Archivée</td>
+</tr>
+<tr>
+<td>Buster</td>
+<td>06/07/2019</td>
+<td>10/09/2022</td>
+<td>Archivée</td>
+</tr>
+<tr>
+<td>Bullseye</td>
+<td>14/08/2021</td>
+<td>14/08/2024</td>
+<td>Oldstable</td>
+</tr>
+<tr>
+<td>Bookworm</td>
+<td>10/06/2023</td>
+<td>10/06/2026</td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>Trixie</td>
+<td>NA</td>
+<td>NA</td>
+<td>Testing</td>
+</tr>
+<tr>
+<td>Forky</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<p>Source : - <a href="https://www.debian.org/releases/">Debian.org</a>
+- <a
+href="https://en.wikipedia.org/wiki/Debian_version_history">Wikipedia.org</a>
+20. <em><em>L’un des atouts de Debian fut le nombre d’architecture (!=
+processeurs) officiellement prises en charge. Combien et lesquelles sont
+prises en charge par la version Bullseye ?</em></em><br />
+Il y a 9 architecture pris en charge par la version Bullseye: – amd64
+pour les PC AMD64 64 bits / Intel EM64T / x86-64. – i386 pour les PC
+i386 32 bits / Intel IA-32. – ppc64el pour PowerPC 64 bits little-endian
+Motorola/IBM PowerPC. – s390x pour les serveurs IBM S/390 64 bits. –
+armel pour ARM.-armhf pour les anciens matériels ARM et les
+architectures 32 bits plus récentes. – arm64 pour les architectures ARM
+64 bits Arch64. – mipsel pour MIPS 32 bits little-endian. – mips64el
+pour MIPS 64 bits little-endian. <a
+href="https://www.debian.org/releases/bullseye/arm64/release-notes/chwhats-%20new.fr.html#idm120">debian.org</a></p>
+<ol start="21" type="1">
+<li><p><em><em>Première version avec un nom de code Quel a été le
+premier nom de code utilisé ? Le premier nom de code est Buzz</em></em>
+Le nom de code est Buzz <a
+href="https://www.debian.org/releases/bullseye/arm64/release-notes/chwhats-%20new.fr.html#idm120">debian.org</a></p></li>
+<li><p><em><em>Quand a-t-il été annoncé ?</em></em> Elle a été annoncée
+en 19 août 1991. <a
+href="https://www.debian.org/releases/bullseye/arm64/release-notes/chwhats-%20new.fr.html#idm120">debian.org</a></p></li>
+<li><p><em><em>Quel était le numéro de version de cette distribution
+?</em></em> c’était la version 0.99.14</p></li>
+<li><p><em><em>Dernière nom de code attribué Quel est le dernier nom de
+code annoncé à ce jour ?</em></em> le nom de code de la version actuelle
+est Bookworm <a
+href="https://www.debian.org/releases/bullseye/arm64/release-notes/chwhats-%20new.fr.html#idm120">debian.org</a></p></li>
+<li><p><em><em>Quand a-t-il été annoncé ?</em></em> annoncée le 23 avril
+2022 <a
+href="https://www.debian.org/releases/bullseye/arm64/release-notes/chwhats-%20new.fr.html#idm120">debian.org</a></p></li>
+<li><p><em><em>Quelle est la version de cette distribution ?</em></em>
+La version actuelle est la version 12 source : <a
+href="https://www.debian.org/doc/manuals/debian-faq/ftparchives.fr.html#codenames">debian.org</a>
+Info en plus : Intel PRO/1000 MT Desktop (NAT) Source : application
+VirtualBox</p>
+<h2 id="des-questions-sur-git">Des questions sur git</h2></li>
+<li><p><em><em>Qu’est-ce que le logiciel gitk ? Comment se lance-t-il ?
+</em></em> gitk est un logiciel de visualisation graphique d’historique.
+C’est une sorte de d’interface GUI. Pour lancer gitk il faut utiliser la
+commande suivante “$ gitk [options de git log]” Source : <a
+href="https://git-scm.com/book/fr/v2/Annexe-A:-Git-dans-d%E2%80%99autres-environnements-Interfaces-graphiques">git-scm.com</a></p></li>
+<li><p><em><em>Qu’est-ce que le logiciel git-gui ? Comment se lance-t-il
+?</em></em> Git-gui est l’interface graphique permettant de ciseler les
+commits. Il s’utilise avec la commande “git gui”</p></li>
+<li><p><em><em>Pourquoi avez-vous choisi ce logiciel ?</em></em> Pour sa
+simplicité d’utilisation et d’installation, de plus c’est un logiciel
+payant (si utilisé à usage commercial) ce qui est une preuve de
+qualité.</p></li>
+<li><p><em><em>Comment l’avez vous installé ?</em></em> en le
+téléchargeant sur internet et suivant les étapes du readme il suffit de
+décompresser dans le dossier de notre choix et de lancer le script
+bin/smartgit, qui quand uttilisé pour la première fois lance un
+installeur Plus d’information sur la partie installation de
+gitea.</p></li>
+<li><p><em><em>Comparer-le aux outils inclus avec git (et installé
+précédemment) ainsi qu’avec ce qui serait fait en ligne de commande pure
+: fonctionnalités avantages, inconvénients</em></em> cette interface est
+plus claire et permet une meilleure lisibilité des différentes branches
+de git, étant donc plus façile a comprendre pour un débutant.</p></li>
+<li><p>Qu’est-ce que Gitea ? Gitea est un logiciel de service de
+développement auto-hébergé sans douleur. Il inclut Git hosting,
+évaluation de code, travail d’équipe, dépôt de paquet et CI/CD. Source :
+<a href="https://docs.gitea.com/">gitea.com</a></p></li>
+<li><p>À quels logiciels bien connus dans ce domaine peut-on le comparer
+(en citer au moins 2) ? GitHub, Bitbucket and GitLab</p></li>
+</ol>
+<p>Source : <a href="https://docs.gitea.com/">gitea.com</a></p>
+<ol start="8" type="1">
+<li><p>Qu’est-ce qu’un fork (dans le domaine du développement logiciel
+bien entendu) ? Un fork est la création d’un nouveau logiciel à partir
+du code source d’un logiciel déjà existant.</p></li>
+<li><p>De quel logiciel Gitea est-il le fork ? Ce logiciel existe-t-il
+encore ? Il est fork à partir de Gog</p></li>
+</ol>
+</body>
+</html>
